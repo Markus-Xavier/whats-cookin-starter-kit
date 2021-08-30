@@ -1,29 +1,33 @@
+/* eslint-disable max-len */
 import { assert } from 'chai';
 import Ingredient from '../src/classes/Ingredient';
 
 describe('Ingredient', function() {
-  beforeEach( () => {
-    const ingredientData = {
+  let ingredientData, ingredientData2, ingredient1, ingredient2;
+
+  beforeEach(function() {
+    ingredientData = {
       "id": 20081,
       "quantity": {
         "amount": 1.5,
         "unit": "c"
       }
     };
-    const ingredientData2 = {
+    ingredientData2 = {
       "id": 18372,
       "quantity": {
         "amount": 0.5,
         "unit": "tsp"
       }
     };  
-    const ingredient1 = new Ingredient(ingredientData);
-    const ingredient2 = new Ingredient(ingredientData2);
+    ingredient1 = new Ingredient(ingredientData);
+    ingredient2 = new Ingredient(ingredientData2);
   })
 
   it('should be a function', function() {
     assert.isFunction(Ingredient);
     assert.instanceOf(ingredient1, Ingredient);
+    assert.instanceOf(ingredient2, Ingredient);
   })
 
   it('should have an id property', function() {
@@ -49,6 +53,11 @@ describe('Ingredient', function() {
   it('should have a cost property', function() {
     assert.equal(ingredient1.costInCentsPerUnit, 142);
     assert.equal(ingredient2.costInCentsPerUnit, 582);
+  })
+
+  it('should have an ingredient cost property', function() {
+    assert.equal(ingredient1.ingredientCost, 0.213);
+    assert.equal(ingredient2.ingredientCost, 0.291);
   })
 
   it('should have a method that retrieves the data from the database', function() {
