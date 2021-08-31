@@ -246,19 +246,28 @@ describe('Recipe', function() {
     assert.equal(recipe2.image, 'https://spoonacular.com/recipeImages/678353-556x370.jpg');
   })
 
-  it('should have an ingredients property', function() {
+  it('should have a instructions property', function() {
+    assert.deepEqual(recipe1.instructions, recipeDetails1.instructions);
+    assert.deepEqual(recipe2.instructions, recipeDetails2.instructions);
+  })
+
+  it('should have a name', function() {
+    assert.equal(recipe1.name, 'Loaded Chocolate Chip Pudding Cookie Cups');
+    assert.equal(recipe1.name, 'Maple Dijon Apple Cider Grilled Pork Chops');
+  })
+
+  it('should have a tags property', function() {
+    assert.equal(recipe1.tags, recipeDetails1.tags);
+    assert.equal(recipe2.tags, recipeDetails2.tags);
+  })
+
+  it('should have a method to process the ingredients', function() {
     assert.equal(recipe1.ingredients.length, recipeDetails1.ingredients.length);
-    assert.equal(recipe2.ingredients, recipeDetails2.ingredients.length);
+    assert.equal(recipe2.ingredients.length, recipeDetails2.ingredients.length);
     assert.instanceOf(recipe1.ingredients[0], Ingredient)
     assert.deepEqual(recipe1.ingredients[0], {id: 20081, name: 'wheat flour', amount: 1.5, unit: 'c', costInCentsPerUnit: 142, ingredientCost: 0.213});
     assert.instanceOf(recipe2.ingredients[0], Ingredient)
     assert.deepEqual(recipe2.ingredients[0], {id: 18372, name: 'bicarbonate of soda', amount: 0.5, unit: 'tsp', costInCentsPerUnit: 582, ingredientCost: 0.291});
   })
 
-  it('should have a instructions property', function() {
-    assert.deepEqual(recipe1.instructions, recipeDetails1.instructions);
-    assert.deepEqual(recipe2.instructions, recipeDetails2.instructions);
-  })
-
-  
 })
