@@ -6,6 +6,7 @@ export default class Ingredient {
     this.name = 'null';
     this.amount = ingredientDetails.quantity.amount;
     this.unit = ingredientDetails.quantity.unit;
+    this.costInCentsPerUnit = 0;
     this.ingredientCost = 0;
   }
 

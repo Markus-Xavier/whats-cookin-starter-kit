@@ -3,9 +3,19 @@ import { assert } from 'chai';
 import Ingredient from '../src/classes/Ingredient';
 import Recipe from '../src/classes/Recipe';
 
-describe.skip('Recipe', function() {
-  let recipeDetails1, recipeDetails2, recipe1, recipe2;
+describe('Recipe', function() {
+  let recipeDetails1, recipeDetails2, recipe1, recipe2, dataBase;
   beforeEach(function() {
+    dataBase = [{
+      "id": 20081,
+      "name": "wheat flour",
+      "estimatedCostInCents": 142
+    },
+    {
+      "id": 18372,
+      "name": "bicarbonate of soda",
+      "estimatedCostInCents": 582
+    }];
     recipeDetails1 = {
       "id": 595736,
       "image": "https://spoonacular.com/recipeImages/595736-556x370.jpg",
@@ -253,7 +263,7 @@ describe.skip('Recipe', function() {
 
   it('should have a name', function() {
     assert.equal(recipe1.name, 'Loaded Chocolate Chip Pudding Cookie Cups');
-    assert.equal(recipe1.name, 'Maple Dijon Apple Cider Grilled Pork Chops');
+    assert.equal(recipe2.name, 'Maple Dijon Apple Cider Grilled Pork Chops');
   })
 
   it('should have a tags property', function() {
@@ -261,13 +271,20 @@ describe.skip('Recipe', function() {
     assert.equal(recipe2.tags, recipeDetails2.tags);
   })
 
+  it('should have a recipe ingredients property', function() {
+    assert.equal(recipe1.recipeIngredients, recipeDetails1.ingredients);
+    assert.equal(recipe2.recipeIngredients, recipeDetails2.ingredients);
+  })
+
   it('should have a method to process the ingredients', function() {
+    recipe1.processIngredients(dataBase);
+    recipe2.processIngredients(dataBase);
     assert.equal(recipe1.ingredients.length, recipeDetails1.ingredients.length);
     assert.equal(recipe2.ingredients.length, recipeDetails2.ingredients.length);
     assert.instanceOf(recipe1.ingredients[0], Ingredient)
-    assert.deepEqual(recipe1.ingredients[0], {id: 20081, name: 'wheat flour', amount: 1.5, unit: 'c', costInCentsPerUnit: 142, ingredientCost: 0.213});
+    assert.deepEqual(recipe1.ingredients[0], {id: 20081, name: 'wheat flour', amount: 1.5, unit: 'c', costInCentsPerUnit: 142, ingredientCost: 2.13});
     assert.instanceOf(recipe2.ingredients[0], Ingredient)
-    assert.deepEqual(recipe2.ingredients[0], {id: 18372, name: 'bicarbonate of soda', amount: 0.5, unit: 'tsp', costInCentsPerUnit: 582, ingredientCost: 0.291});
+    assert.deepEqual(recipe2.ingredients[0], {id: 18372, name: 'bicarbonate of soda', amount: 0.5, unit: 'tsp', costInCentsPerUnit: 582, ingredientCost: 2.91});
   })
 
 })
