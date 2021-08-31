@@ -1,26 +1,9 @@
 import './styles.css';
-import apiCalls from './apiCalls';
-import FormManager from './classes/FormManager.js'
+//import apiCalls from './apiCalls';
+import FormManager from './classes/FormManager'
 
-const searchHandler = (event) => {
-    event.preventDefault();
-    const userSearch = {
-    };
-
-    for(const pair of new FormData(event.target)) {
-        userSearch[pair[0]] = pair[1];
-    }
-    console.log(userSearch);
-    return false;
+const logToConsole = (queryArray) => {
+  // console.log(queryArray);
 };
 
-new FormManager('recipe-search', searchHandler);
-
-
-
-
-
-
-
-
-console.log('Hello world');
+new FormManager('recipe-search', logToConsole);
