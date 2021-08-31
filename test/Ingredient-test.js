@@ -45,16 +45,23 @@ describe('Ingredient', function() {
     assert.equal(ingredient2.unit, 'tsp');
   })
 
-  it('should have a cost in cents per unit property', function() {
+  it('should have a method that retrieves the data from the database', function() {
+    let dataBase = [{
+      "id": 20081,
+      "name": "wheat flour",
+      "estimatedCostInCents": 142
+    },
+    {
+      "id": 18372,
+      "name": "bicarbonate of soda",
+      "estimatedCostInCents": 582
+    }];
+    ingredient1.retrieveData()
+    assert.equal(ingredient1.name, 'wheat flour');
     assert.equal(ingredient1.costInCentsPerUnit, 142);
+    ingredient1.retrieveData()
+    assert.equal(ingredient2.name, 'bicarbonate of soda');
     assert.equal(ingredient2.costInCentsPerUnit, 582);
-  })
-
-  it('should have a method that retrieves the name from the database', function() {
-    assert.equal(ingredient1.name, 'wheat flour');
-    assert.equal(ingredient2.name, 'bicarbonate of soda');
-    assert.equal(ingredient1.name, 'wheat flour');
-    assert.equal(ingredient2.name, 'bicarbonate of soda');
   })
 
   it('should have a method that calculates it\'s own cost', function() {
