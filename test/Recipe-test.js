@@ -3,7 +3,7 @@ import { assert } from 'chai';
 import Ingredient from '../src/classes/Ingredient';
 import Recipe from '../src/classes/Recipe';
 
-describe('Recipe', function() {
+describe.skip('Recipe', function() {
   let recipeDetails1, recipeDetails2, recipe1, recipe2;
   beforeEach(function() {
     recipeDetails1 = {

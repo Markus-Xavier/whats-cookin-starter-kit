@@ -3,7 +3,7 @@ import { assert } from 'chai';
 import Ingredient from '../src/classes/Ingredient';
 
 describe('Ingredient', function() {
-  let ingredientData, ingredientData2, ingredient1, ingredient2;
+  let ingredientData, ingredientData2, ingredient1, ingredient2, dataBase;
 
   beforeEach(function() {
     ingredientData = {
@@ -19,7 +19,17 @@ describe('Ingredient', function() {
         "amount": 0.5,
         "unit": "tsp"
       }
-    };  
+    };
+    dataBase = [{
+      "id": 20081,
+      "name": "wheat flour",
+      "estimatedCostInCents": 142
+    },
+    {
+      "id": 18372,
+      "name": "bicarbonate of soda",
+      "estimatedCostInCents": 582
+    }];  
     ingredient1 = new Ingredient(ingredientData);
     ingredient2 = new Ingredient(ingredientData2);
   })
@@ -46,28 +56,21 @@ describe('Ingredient', function() {
   })
 
   it('should have a method that retrieves the data from the database', function() {
-    let dataBase = [{
-      "id": 20081,
-      "name": "wheat flour",
-      "estimatedCostInCents": 142
-    },
-    {
-      "id": 18372,
-      "name": "bicarbonate of soda",
-      "estimatedCostInCents": 582
-    }];
-    ingredient1.retrieveData()
+    
+    ingredient1.retrieveData(dataBase);
     assert.equal(ingredient1.name, 'wheat flour');
     assert.equal(ingredient1.costInCentsPerUnit, 142);
-    ingredient1.retrieveData()
+    ingredient2.retrieveData(dataBase);
     assert.equal(ingredient2.name, 'bicarbonate of soda');
     assert.equal(ingredient2.costInCentsPerUnit, 582);
   })
 
   it('should have a method that calculates it\'s own cost', function() {
-    assert.equal(ingredient1.calculateCost(), 0.213);
-    assert.equal(ingredient2.calculateCost(), 0.291);
-    assert.equal(ingredient1.ingredientCost, 0.213);
-    assert.equal(ingredient2.ingredientCost, 0.291);
+    ingredient1.retrieveData(dataBase);
+    ingredient2.retrieveData(dataBase);
+    assert.equal(ingredient1.calculateCost(), 2.13);
+    assert.equal(ingredient2.calculateCost(), 2.91);
+    assert.equal(ingredient1.ingredientCost, 2.13);
+    assert.equal(ingredient2.ingredientCost, 2.91);
   })
 })
