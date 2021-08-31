@@ -232,8 +232,8 @@ describe('Recipe', function() {
   })
   it('should be a function', function() {
     assert.isFunction(Recipe);
-    assert.instanceOf(recipe1, Ingredient);
-    assert.instanceOf(recipe2, Ingredient);
+    assert.instanceOf(recipe1, Recipe);
+    assert.instanceOf(recipe2, Recipe);
   })
 
   it('should have an id property', function() {
@@ -250,9 +250,14 @@ describe('Recipe', function() {
     assert.equal(recipe1.ingredients.length, recipeDetails1.ingredients.length);
     assert.equal(recipe2.ingredients, recipeDetails2.ingredients.length);
     assert.instanceOf(recipe1.ingredients[0], Ingredient)
-    assert.equal(recipe1.ingredients[0], {id: 20081, name: 'wheat flour', amount: 1.5, unit: 'c', costInCentsPerUnit: 0.213});
+    assert.deepEqual(recipe1.ingredients[0], {id: 20081, name: 'wheat flour', amount: 1.5, unit: 'c', costInCentsPerUnit: 142, ingredientCost: 0.213});
     assert.instanceOf(recipe2.ingredients[0], Ingredient)
-    assert.equal(recipe1.ingredients[0], {id: 18372, name: 'bicarbonate of soda', amount: 0.5, unit: 'tsp', costInCentsPerUnit: 0.291});
+    assert.deepEqual(recipe2.ingredients[0], {id: 18372, name: 'bicarbonate of soda', amount: 0.5, unit: 'tsp', costInCentsPerUnit: 582, ingredientCost: 0.291});
+  })
+
+  it('should have a instructions property', function() {
+    assert.deepEqual(recipe1.instructions, recipeDetails1.instructions);
+    assert.deepEqual(recipe2.instructions, recipeDetails2.instructions);
   })
 
   

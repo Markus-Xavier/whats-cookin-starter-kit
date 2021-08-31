@@ -35,11 +35,6 @@ describe('Ingredient', function() {
     assert.equal(ingredient2.id, 18372);
   })
 
-  it('should have a name property', function() {
-    assert.equal(ingredient1.name, 'wheat flour');
-    assert.equal(ingredient2.name, 'bicarbonate of soda');
-  })
-
   it('should have an amount property', function() {
     assert.equal(ingredient1.amount, 1.5);
     assert.equal(ingredient2.amount, 0.5);
@@ -55,20 +50,17 @@ describe('Ingredient', function() {
     assert.equal(ingredient2.costInCentsPerUnit, 582);
   })
 
-  it('should have an ingredient cost property', function() {
-    assert.equal(ingredient1.ingredientCost, 0.213);
-    assert.equal(ingredient2.ingredientCost, 0.291);
-  })
-
   it('should have a method that retrieves the data from the database', function() {
-    assert.equal(ingredient1.retrieveName(), 'wheat flour');
-    assert.equal(ingredient2.retrieveName(), 'bicarbonate of soda');
+    assert.equal(ingredient1.name, 'wheat flour');
+    assert.equal(ingredient2.name, 'bicarbonate of soda');
+    assert.equal(ingredient1.name, 'wheat flour');
+    assert.equal(ingredient2.name, 'bicarbonate of soda');
   })
 
   it('should have a method that calculates it\'s own cost', function() {
     assert.equal(ingredient1.calculateCost(), 0.213);
     assert.equal(ingredient2.calculateCost(), 0.291);
+    assert.equal(ingredient1.ingredientCost, 0.213);
+    assert.equal(ingredient2.ingredientCost, 0.291);
   })
-
-
 })
