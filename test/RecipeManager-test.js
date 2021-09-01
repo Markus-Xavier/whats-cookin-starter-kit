@@ -10,7 +10,7 @@ describe('Recipe Manager', function() {
   });
 
   it('should start with no recipes', function() {
-
+    
     assert.equal(recipeManager.filteredRecipes, null);
   });
 
