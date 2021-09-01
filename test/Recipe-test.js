@@ -49,8 +49,7 @@ describe('Recipe', function() {
   })
 
   it('should have a method to process the ingredients', function() {
-    recipe1.processIngredients(ingredientsDataBase);
-    recipe2.processIngredients(ingredientsDataBase);
+    
     assert.equal(recipe1.processedIngredients.length, recipeDetails1.ingredients.length);
     assert.equal(recipe2.processedIngredients.length, recipeDetails2.ingredients.length);
     assert.instanceOf(recipe1.processedIngredients[0], Ingredient)

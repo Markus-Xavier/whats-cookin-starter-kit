@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import Ingredient from './Ingredient';
+import { ingredientsDataBase } from '../data/dataTestRecipe';
 
 export default class Recipe {
   constructor(recipeDetails) {
@@ -9,15 +10,14 @@ export default class Recipe {
     this.name = recipeDetails.name;
     this.tags = recipeDetails.tags;
     this.recipeIngredients = recipeDetails.ingredients;
-    this.processedIngredients = null;
+    this.processedIngredients = this.processIngredients();
   }
 
-  processIngredients(dataBase) {
-    this.processedIngredients = this.recipeIngredients.map(ingredientDetails => {
+  processIngredients() {
+    let processedIngredients = this.recipeIngredients.map(ingredientDetails => {
       let newIngredient = new Ingredient(ingredientDetails);
-      newIngredient.retrieveData(dataBase);
-      newIngredient.calculateCost();
       return newIngredient;
     })
+    return processedIngredients;
   }
 }

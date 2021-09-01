@@ -2,12 +2,11 @@
 import { assert } from 'chai';
 import Ingredient from '../src/classes/Ingredient';
 
-describe('Ingredient', function() {
+describe.only('Ingredient', function() {
   let ingredientData, ingredientData2, ingredient1, ingredient2;
 
   beforeEach(function() {
-    ingredientData = {
-      "id": 20081,
+    ingredientData = {"id": 20081,
       "quantity": {
         "amount": 1.5,
         "unit": "c"
@@ -45,22 +44,32 @@ describe('Ingredient', function() {
     assert.equal(ingredient2.unit, 'tsp');
   })
 
-  it('should have a method that retrieves the data from the database', function() {
-    
-    ingredient1.retrieveData();
+  it('should have a method that retrieves the name from the data manager', function() {
     assert.equal(ingredient1.name, 'wheat flour');
-    assert.equal(ingredient1.costInCentsPerUnit, 142);
-    ingredient2.retrieveData();
     assert.equal(ingredient2.name, 'bicarbonate of soda');
+  })
+
+  it('should have a method that retrieves the cost in cents per unit from the data manager', function() {
+    assert.equal(ingredient1.costInCentsPerUnit, 142);
     assert.equal(ingredient2.costInCentsPerUnit, 582);
   })
 
   it('should have a method that calculates it\'s own cost', function() {
-    ingredient1.retrieveData();
-    ingredient2.retrieveData();
-    assert.equal(ingredient1.calculateCost(), 2.13);
-    assert.equal(ingredient2.calculateCost(), 2.91);
+    
     assert.equal(ingredient1.ingredientCost, 2.13);
     assert.equal(ingredient2.ingredientCost, 2.91);
+  })
+
+  it('should give default information if it cannot find the ingredient', function() {
+    let ingredientData3 = {
+      "id": 0,
+      "quantity": {
+        "amount": 0.5,
+        "unit": "tsp"
+      }
+    };
+    let ingredient3 = new Ingredient(ingredientData3);
+    assert.equal(ingredient3.name, 'Unknown Ingredient');
+    assert.equal(ingredient3.ingredientCost, 0);
   })
 })

@@ -4,21 +4,32 @@ import {ingredientsDataBase} from '../data/dataTestRecipe';
 export default class Ingredient {
   constructor(ingredientDetails) {
     this.id = ingredientDetails.id;
-    this.name = this.retrieveData();
+    this.name = this.setName();
     this.amount = ingredientDetails.quantity.amount;
     this.unit = ingredientDetails.quantity.unit;
-    this.costInCentsPerUnit = 0;
+    this.costInCentsPerUnit = this.setCostInCentsPerUnit();
     this.ingredientCost = this.calculateCost();
   }
 
-  retrieveData() {
+  setName() {
     let ingredient = ingredientsDataBase.find(ingredient => (ingredient.id === this.id));
-    this.name = ingredient.name;
-    this.costInCentsPerUnit = ingredient.estimatedCostInCents;
+    if (!ingredient) {
+      let ingredientName = 'Unknown Ingredient';
+      return ingredientName;
+    } 
+    return ingredient.name;
+  }
+
+  setCostInCentsPerUnit() {
+    let ingredient = ingredientsDataBase.find(ingredient => (ingredient.id === this.id));
+    if (!ingredient) {
+      let price = 0;
+      return price;
+    }
+    return ingredient.estimatedCostInCents;
   }
 
   calculateCost() {
-    this.ingredientCost = (this.costInCentsPerUnit * this.amount) / 100;
-    return this.ingredientCost;
+    return (this.costInCentsPerUnit * this.amount) / 100;
   }
 }
