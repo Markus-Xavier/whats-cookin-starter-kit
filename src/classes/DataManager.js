@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const emptyArray = [];
 
 export default class DataManager {
@@ -18,16 +19,16 @@ export default class DataManager {
   }
 
   setTags() {
-    this.tags = this.recipes.map((element) => {return element.tags}).flat();
+    this.tags = this.recipes.map((element) => element.tags).flat();
     this.tags = this.tags.reduce((accumulator, tag) => {
       !accumulator.includes(tag) && accumulator.push(tag);
       return accumulator;
     }, []);
   }
 
-  checkForArrayMatch(comparisonArray) {
+  checkForMatch(searchQuery) {
     return (targetString) => {
-      if (targetString.includes(comparisonArray)) {
+      if (targetString.includes(searchQuery)) {
         return true;
       } else {
         return false;
@@ -38,21 +39,19 @@ export default class DataManager {
   filterRecipes(sortedSearch) {
     
     this.filteredRecipes = this.recipes.filter(recipe => {
-      let hasTag = false;
-      let hasKeyword = false;
-      let hasIngredient = false;
+      let isTagIncluded = false;
+      let isKeywordIncluded = false;
+      let isIngredientIncluded = false;
 
-      
-
-      if(sortedSearch.tags.length) {
-        hasTag = recipe.tags.some(this.checkForArrayMatch(sortedSearch.tags));
+      if (sortedSearch.tags.length) {
+        isTagIncluded = recipe.tags.some(this.checkForMatch(sortedSearch.tags));
       }
       
-      if(sortedSearch.keywords.length) {
-        hasKeyword = recipe.name.includes(this.checkForArrayMatch(sortedSearch.keywords));
-        // hasIngredient = recipe.ingredients.some(checkForArraymatch(sortedSearch.ingredients));
+      if (sortedSearch.keywords.length) {
+        isKeywordIncluded = recipe.name.includes(this.checkForMatch(sortedSearch.keywords));
+        // isIngredientIncluded = recipe.ingredients.some(checkForMatch(sortedSearch.ingredients));
       }
-      return hasTag || hasKeyword || hasIngredient;
+      return isTagIncluded || isKeywordIncluded || isIngredientIncluded;
     })
   }
 
