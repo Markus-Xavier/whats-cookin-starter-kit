@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 import Ingredient from './Ingredient';
-import { ingredientsDataBase } from '../data/dataTestRecipe';
 
 export default class Recipe {
   constructor(recipeDetails) {
