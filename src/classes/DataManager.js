@@ -7,6 +7,7 @@ export default class DataManager {
     this.ingredients = emptyArray;
     this.tags = emptyArray;
     this.filteredRecipes = emptyArray;
+    
   }
 
   setRecipes(recipes) {
@@ -36,6 +37,24 @@ export default class DataManager {
     } 
   }
 
+  checkForKeywordsInName(recipe, searchQuery) {
+    const hasKeyword = searchQuery.keywords.map(keyword => {
+      return recipe.name.includes(keyword);
+    })
+    if (hasKeyword.indexOf(true) > -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
+  returnIngredientIds(sortedSearch) {
+    this.ingredients
+  }
+  checkForKeywordsInIngredients(
+    //get ID of ingredietn from keyword
+  )
+
   filterRecipes(sortedSearch) {
     
     this.filteredRecipes = this.recipes.filter(recipe => {
@@ -44,12 +63,13 @@ export default class DataManager {
       let isIngredientIncluded = false;
 
       if (sortedSearch.tags.length) {
-        isTagIncluded = recipe.tags.some(this.checkForMatch(sortedSearch.tags));
+        isTagIncluded = recipe.tags.some(this.checkForMatch(sortedSearch.tags));        
       }
       
       if (sortedSearch.keywords.length) {
-        isKeywordIncluded = recipe.name.includes(this.checkForMatch(sortedSearch.keywords));
-        // isIngredientIncluded = recipe.ingredients.some(checkForMatch(sortedSearch.ingredients));
+        isKeywordIncluded = this.checkForKeywordsInName(recipe, sortedSearch);
+        
+        isIngredientIncluded = recipe.ingredients.some(this.checkForMatch(sortedSearch.ingredients));
       }
       return isTagIncluded || isKeywordIncluded || isIngredientIncluded;
     })
