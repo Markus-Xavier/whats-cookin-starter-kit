@@ -48,12 +48,19 @@ export default class DataManager {
     }
   }
   
-  returnIngredientIds(sortedSearch) {
-    this.ingredients
+
+  checkForKeywordsInIngredients(recipe, searchQuery) {
+    const hasIngredient = searchQuery.ingredients.some((id) => {
+      return recipe.ingredients.some((ingredient) => {
+        if (ingredient.id === id) {
+          return true;
+        } else {
+          return false;
+        }
+      })
+    })
+return hasIngredient;
   }
-  checkForKeywordsInIngredients(
-    //get ID of ingredietn from keyword
-  )
 
   filterRecipes(sortedSearch) {
     
@@ -68,10 +75,14 @@ export default class DataManager {
       
       if (sortedSearch.keywords.length) {
         isKeywordIncluded = this.checkForKeywordsInName(recipe, sortedSearch);
-        
-        isIngredientIncluded = recipe.ingredients.some(this.checkForMatch(sortedSearch.ingredients));
       }
+      
+      if (sortedSearch.ingredients.length) {
+        isIngredientIncluded = this.checkForKeywordsInIngredients(recipe,sortedSearch);
+      }
+
       return isTagIncluded || isKeywordIncluded || isIngredientIncluded;
+  
     })
   }
 
