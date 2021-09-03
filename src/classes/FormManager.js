@@ -20,7 +20,6 @@ export default class FormManager {
     let searchQuery = '';
 
     for (const pair of new FormData(event.target)) {
-      // const noUnderScores = pair[1].replace(/[_]/g, '');
       const filteredString = pair[1].replace(/[^a-z]/gi, ' ');
       searchQuery += ' ' + filteredString;
     }
