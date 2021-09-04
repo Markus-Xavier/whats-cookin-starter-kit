@@ -47,7 +47,6 @@ export default class DataManager {
       return false;
     }
   }
-  
 
   checkForKeywordsInIngredients(recipe, searchQuery) {
     const hasIngredient = searchQuery.ingredients.some((id) => {
@@ -59,7 +58,7 @@ export default class DataManager {
         }
       })
     })
-return hasIngredient;
+    return hasIngredient;
   }
 
   filterRecipes(sortedSearch) {
@@ -78,7 +77,7 @@ return hasIngredient;
       }
       
       if (sortedSearch.ingredients.length) {
-        isIngredientIncluded = this.checkForKeywordsInIngredients(recipe,sortedSearch);
+        isIngredientIncluded = this.checkForKeywordsInIngredients(recipe, sortedSearch);
       }
 
       return isTagIncluded || isKeywordIncluded || isIngredientIncluded;

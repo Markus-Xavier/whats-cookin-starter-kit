@@ -798,7 +798,7 @@ describe('DataManager', function() {
   })
 
 
-  it('should check ingredients data nd return a list of recipes with ingredients that match search keywords', function() {
+  it('should check ingredients data and return a list of recipes with ingredients that match search keywords', function() {
     dataManager.setRecipes(testRecipes);
     dataManager.filterRecipes(userInput4);
 
