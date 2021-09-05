@@ -24,8 +24,6 @@ export default class FormManager {
       searchQuery += ' ' + filteredString;
     }
 
-    console.log(searchQuery);
-
     const sortedSearch = this.formHandler.sortUserSearch(searchQuery.split(' '));
     this.callBack(sortedSearch);
     return false;
