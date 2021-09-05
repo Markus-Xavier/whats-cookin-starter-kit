@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
-import {ingredientsDataBase} from '../data/dataTestRecipe';
 
 export default class Ingredient {
-  constructor(ingredientDetails) {
+  constructor(ingredientDetails, ingredientsDataBase) {
+    this.ingredientsDataBase = ingredientsDataBase;
     this.id = ingredientDetails.id;
     this.name = this.setName();
     this.amount = ingredientDetails.quantity.amount;
@@ -12,7 +12,7 @@ export default class Ingredient {
   }
 
   setName() {
-    let ingredient = ingredientsDataBase.find(ingredient => (ingredient.id === this.id));
+    let ingredient = this.ingredientsDataBase.find(ingredient => (ingredient.id === this.id));
     if (!ingredient) {
       let ingredientName = 'Unknown Ingredient';
       return ingredientName;
@@ -21,7 +21,7 @@ export default class Ingredient {
   }
 
   setCostInCentsPerUnit() {
-    let ingredient = ingredientsDataBase.find(ingredient => (ingredient.id === this.id));
+    let ingredient = this.ingredientsDataBase.find(ingredient => (ingredient.id === this.id));
     if (!ingredient) {
       let price = 0;
       return price;

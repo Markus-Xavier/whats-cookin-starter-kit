@@ -1,8 +1,9 @@
 /* eslint-disable max-len */
 import { assert } from 'chai';
 import Ingredient from '../src/classes/Ingredient';
+import {ingredientsDataBase} from '../src/data/dataTestRecipe';
 
-describe.only('Ingredient', function() {
+describe('Ingredient', function() {
   let ingredientData, ingredientData2, ingredient1, ingredient2;
 
   beforeEach(function() {
@@ -19,8 +20,8 @@ describe.only('Ingredient', function() {
         "unit": "tsp"
       }
     }; 
-    ingredient1 = new Ingredient(ingredientData);
-    ingredient2 = new Ingredient(ingredientData2);
+    ingredient1 = new Ingredient(ingredientData, ingredientsDataBase);
+    ingredient2 = new Ingredient(ingredientData2, ingredientsDataBase);
   })
 
   it('should be a function', function() {
@@ -68,7 +69,7 @@ describe.only('Ingredient', function() {
         "unit": "tsp"
       }
     };
-    let ingredient3 = new Ingredient(ingredientData3);
+    let ingredient3 = new Ingredient(ingredientData3, ingredientsDataBase);
     assert.equal(ingredient3.name, 'Unknown Ingredient');
     assert.equal(ingredient3.ingredientCost, 0);
   })
