@@ -7,113 +7,233 @@
   </head>
   <body>
     <header>
-     <section></section>
       <nav class="navbar">
-      <a href="#"><h1>Whats Cookin</h1></a>
-      <ul class="nav__links">
-        <li class="nav__items"><a href="#">EXPLORE</a></li>
-        <li class="nav__items"><a href="#">FAVORITES</a></li>
-        <li class="nav__items"><a href="#">WANT TO COOK</a></li>
-      </ul>
+        <a href="#"><h1 class="header-logo">What's<br>Cookin?</h1></a>
+        <div class="right-container">
+          <ul class="nav__links">
+            <li class="nav__items"><a href="#">EXPLORE</a></li>
+            <li class="nav__items"><a href="#">FAVORITES</a></li>
+            <li class="nav__items"><a href="#">WANT TO COOK</a></li>
+          </ul>
+        </div>
       </nav>
-      <!-- <button class="nav-button" id="exploreNav"><h2>EXPLORE</h2></button>
-      <button class="nav-button" id="wantToCookNav"><h2>WANT TO COOK</h2></button>
-      <button class="nav-button" id="favoritesNav"><h2>FAVORITES</h2></button> -->
     </header>
-     <section class="search-section" id="searchSection">
-      <div><h3>WHAT'S COOKIN'</h3>></div>
-      <form>
-      <div id="searchBarDiv">
-        <input type=text id="searchBarInput">
-      </div>
-      <section id="tagsSection">
-        <button id="lunch">Lunch</button>
-        <button id="dinner">Dinner</button>
-        <button id="breakfast">Breakfast</button>
-        <button id="vegan">Vegan</button>
-        <button id="grill">Grill</button>
-        <button id="asian">Asian</button>
-        <button id="dessert">Dessert</button>
-        <button id="italian">Italian</button>
-        <button id="mexican">Mexican</button>
-        <button id="antipasti">Antipasti</button>
-        <button id="pasta">Pasta</button>
-      </section>
-      </form>
-    </section>
-<<<<<<< HEAD
-    <section class="carousel" id="popularRecipes">
-      <div>POPULAR RECIPES</div>
-=======
-    <section class="" id="popularRecipes">
-      <div><h4>POPULAR RECIPES</h4></div>
->>>>>>> 4ef87d58a47ac1b41a72335ce70b40f2873e5998
-      <section id="randomRecipes">
-        <!-- <section> 
-          <div>Image</div>
-          <div>Recipe name</div>
-          <div>Tags</div>
-          <div>Description</div>
-        </section> -->
-      </section>
-    </section>
-<<<<<<< HEAD
-    <section class="carousel" id="wantToCook">
-      <div>wantToCook</div>
-=======
-    <section class="" id="wantToCook">
-      <div><h4>WANT TO COOK</h4>></div>
->>>>>>> 4ef87d58a47ac1b41a72335ce70b40f2873e5998
-      <section id="wantToCookRecipes">
-        <!-- <section> 
-          <div>Image</div>
-          <div>Recipe name</div>
-          <div>Tags</div>
-          <div>Description</div>
-        </section> -->
-      </section>
-    </section>
-    <section class=" .hidden" id="filteredRecipes">
-        <!-- <section>
-          <img>
-          <section>
-            <div>Recipe Name</div>
-            <div>Tags</div>
-            <div>Recipe Description</div>
-          </section>
-          <div>Ingredient Cost</div>
-        </section> -->
-    <section class=" .hidden" id="recipeRender">
-      <section id="recipeRender">
-        <!-- <section id="recipeInfo">
-          <div>Back to explore</div>
-          <div>RECIPE</div>
-          <section>Image/favorite/want to cook</section>
-          <div>Tittle/Tags</div>
+    <section class="display-area">
+      <section class="main-screen hidden">
+        <div class="heading">
+          <h2>WHAT'S COOKIN'</h2>
+        </div>
+        <section class="search-section" id="searchSection">
+          <form>
+            <div class="search-bar-container">
+              <input type=text class="search-bar" id="searchBarInput" placeholder="Search for a recipe or ingredient">
+            </div>
+            <section class="tagsSection">
+              <input type="checkbox" id="lunch" name="lunch" value="lunch">
+                <label for="lunch">
+                  <button class="pill-button" id="lunch">Lunch</button>
+                </label>
+              <input type="checkbox" id="dinner" name="dinner" value="dinner">
+                <label for="dinner">
+                  <button class="pill-button" id="dinner">Dinner</button>
+                </label>
+              <input type="checkbox" id="breakfast" name="breakfast" value="breakfast">
+                <label for="breakfast">
+                  <button class="pill-button" id="breakfast">Breakfast</button>
+                </label>
+              <input type="checkbox" id="sauce" name="sauce" value="sauce">
+                <label for="sauce">
+                  <button class="pill-button" id="vegan">Sauce</button>
+                </label>
+              <input type="checkbox" id="salad" name="salad" value="salad">
+                <label for="salad">
+                  <button class="pill-button" id="grill">Salad</button>
+                </label>
+              <input type="checkbox" id="condiment" name="condiment" value="condiment">
+                <label for="condiment">
+                  <button class="pill-button" id="asian">Condiment</button>
+                </label>
+              <input type="checkbox" id="antipasti" name="antipasti" value="antipasti">
+                <label for="antipasti">
+                  <button class="pill-button" id="dessert">Antipasti</button>
+                </label>
+              <input type="checkbox" id="snack" name="snack" value="snack">
+                <label for="snack">
+                  <button class="pill-button" id="italian">Snack</button>
+                </label>
+              <input type="checkbox" id="appetizer" name="appetizer" value="appetizer">
+                <label for="appetizer">
+                  <button class="pill-button" id="appetizer">Appetizer</button>
+                </label>
+              <input type="checkbox" id="starter" name="starter" value="starter">
+                <label for="starter">
+                  <button class="pill-button" id="starter">Starter</button>
+                </label>
+              <input type="checkbox" id="main dish" name="main dish" value="main dish">
+                <label for="main dish">
+                  <button class="pill-button" id="main dish">Main Dish</button>
+                </label>
+            </section>
+          </form>
         </section>
-        <section>
-          <section>Ingredients/quantity/cost</section>
-          <section>Instructions</section>
-        </section> -->
+        <section class="carousel-section" id="popularRecipes">
+          <h3 class="carousel-heading">popular recipes</h3>
+          <section class="carousel" id="randomPopularRecipes">
+            <div class="recipe-card1">
+              <img src="assets/images/spaghetti.jpeg">
+              <h4>Recipe name</h4>
+              <div class="recipe-tags1">Tags</div>
+              <p class="recipe-desc1">Description</p>
+            </div>
+            <div class="recipe-card1">
+              <img src="assets/images/spaghetti.jpeg">
+              <h4>Recipe name</h4>
+              <div class="recipe-tags1">Tags</div>
+              <p class="recipe-desc1">Description</p>
+            </div>
+            <div class="recipe-card1">
+              <img src="assets/images/spaghetti.jpeg">
+              <h4>Recipe name</h4>
+              <div class="recipe-tags1">Tags</div>
+              <p class="recipe-desc1">Description</p>
+            </div>
+            <div class="recipe-card1">
+              <img src="assets/images/spaghetti.jpeg">
+              <h4>Recipe name</h4>
+              <div class="recipe-tags1">Tags</div>
+              <p class="recipe-desc1">Description</p>
+            </div>
+          </section>
+        </section>
+        <section class="carousel-section" id="wantToCook">
+          <h3 class="carousel-heading">i want to cook</h3>
+          <section class="carousel" id="wantToCook">
+            <div class="recipe-card1">
+              <img src="assets/images/spaghetti.jpeg">
+              <h4>Recipe name</h4>
+              <div class="recipe-tags1">Tags</div>
+              <p class="recipe-desc1">Description</p>
+            </div>
+            <div class="recipe-card1">
+              <img src="assets/images/spaghetti.jpeg">
+              <h4>Recipe name</h4>
+              <div class="recipe-tags1">Tags</div>
+              <p class="recipe-desc1">Description</p>
+            </div>
+            <div class="recipe-card1">
+              <img src="assets/images/spaghetti.jpeg">
+              <h4>Recipe name</h4>
+              <div class="recipe-tags1">Tags</div>
+              <p class="recipe-desc1">Description</p>
+            </div>
+            <div class="recipe-card1">
+              <img src="assets/images/spaghetti.jpeg">
+              <h4>Recipe name</h4>
+              <div class="recipe-tags1">Tags</div>
+              <p class="recipe-desc1">Description</p>
+            </div>
+          </section>
+        </section>
+      </section>
+      <section class="filtered-recipes-view">
+        <div class="heading">
+          <h2>SEARCH RESULTS</h2>
+        </div>
+        <section class="search-section" id="searchSection">
+          <form>
+            <div class="search-bar-container">
+              <input type=text class="search-bar" id="search-bar-filtered-view" placeholder="Search">
+            </div>
+            <section class="tagsSection">
+              <input type="checkbox" id="lunch" name="lunch" value="lunch">
+              <label for="lunch">
+                <button class="pill-button" id="lunch">Lunch</button>
+              </label>
+              <input type="checkbox" id="dinner" name="dinner" value="dinner">
+              <label for="dinner">
+                <button class="pill-button" id="dinner">Dinner</button>
+              </label>
+              <input type="checkbox" id="breakfast" name="breakfast" value="breakfast">
+              <label for="breakfast">
+                <button class="pill-button" id="breakfast">Breakfast</button>
+              </label>
+              <input type="checkbox" id="sauce" name="sauce" value="sauce">
+              <label for="sauce">
+                <button class="pill-button" id="vegan">Sauce</button>
+              </label>
+              <input type="checkbox" id="salad" name="salad" value="salad">
+              <label for="salad">
+                <button class="pill-button" id="grill">Salad</button>
+              </label>
+              <input type="checkbox" id="condiment" name="condiment" value="condiment">
+              <label for="condiment">
+                <button class="pill-button" id="asian">Condiment</button>
+              </label>
+              <input type="checkbox" id="antipasti" name="antipasti" value="antipasti">
+              <label for="antipasti">
+                <button class="pill-button" id="dessert">Antipasti</button>
+              </label>
+              <input type="checkbox" id="snack" name="snack" value="snack">
+              <label for="snack">
+                <button class="pill-button" id="italian">Snack</button>
+              </label>
+              <input type="checkbox" id="appetizer" name="appetizer" value="appetizer">
+              <label for="appetizer">
+                <button class="pill-button" id="appetizer">Appetizer</button>
+              </label>
+              <input type="checkbox" id="starter" name="starter" value="starter">
+              <label for="starter">
+                <button class="pill-button" id="starter">Starter</button>
+              </label>
+              <input type="checkbox" id="main dish" name="main dish" value="main dish">
+              <label for="main dish">
+                <button class="pill-button" id="main dish">Main Dish</button>
+              </label>
+            </section>
+          </form>
+        </section>
+          <!-- <section>
+            <img>
+            <section>
+              <div>Recipe Name</div>
+              <div>Tags</div>
+              <div>Recipe Description</div>
+            </section>
+            <div>Ingredient Cost</div>
+          </section> -->
+      </section>
+      <section class="recipe-view hidden">
+        <section id="recipeRender">
+          <!-- <section id="recipeInfo">
+            <div>Back to explore</div>
+            <div>RECIPE</div>
+            <section>Image/favorite/want to cook</section>
+            <div>Tittle/Tags</div>
+          </section>
+          <section>
+            <section>Ingredients/quantity/cost</section>
+            <section>Instructions</section>
+          </section> -->
+        </section>
+      </section>
+      <section class="favorites-view hidden">
+        <!-- <section> 
+            <div>Image</div>
+            <div>Recipe name</div>
+            <div>Tags</div>
+            <div>Description</div>
+          </section> -->
+      </section>
+      <section class="want-to-cook-view hidden">
+        <!-- <section> 
+            <div>Image</div>
+            <div>Recipe name</div>
+            <div>Tags</div>
+            <div>Description</div>
+          </section> -->
       </section>
     </section>
-    <section class=" .hidden" id="favorites">
-      <!-- <section> 
-          <div>Image</div>
-          <div>Recipe name</div>
-          <div>Tags</div>
-          <div>Description</div>
-        </section> -->
-    </section>
-    <section class=" .hidden" id="wantToCook">
-      <!-- <section> 
-          <div>Image</div>
-          <div>Recipe name</div>
-          <div>Tags</div>
-          <div>Description</div>
-        </section> -->
-    </section>
-  </body>
+    </body>
   <script type="text/javascript" src="classes/Ingredient.js"></script>
   <script type="text/javascript" src="classes/Recipe.js"></script>
   <script type="text/javascript" src="classes/DataManager.js"></script>
