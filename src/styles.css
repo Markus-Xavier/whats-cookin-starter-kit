@@ -74,7 +74,11 @@ a:link {
 .filtered-recipes-view,
 .recipe-view,
 .favorites-view,
-.want-to-cook-view {
+.want-to-cook-view,
+.actions,
+.recipe-details,
+.ingredients-list,
+.instructions-list {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -208,6 +212,51 @@ input[type=checkbox]: checked {
 	width: 100%;
 	height: 16px;
 	margin-top: 5px;
+}
+
+.recipe-view__container__1,
+.recipe-view__container__2,
+.recipe-view__container__3,
+.recipe-view__container__4 {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	padding-top: 20px;
+}
+
+.img-recipe {
+	height: 40vh;
+	width: 40vw;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.recipe-view {
+	height: 1000px;
+	width: 100%;
+	display: flex;
+}
+.back-to-explore {
+	color: black;
+}
+
+.actions {
+	align-items: flex-start;
+}
+
+.recipe-view__container__3 {
+	width: 40vw;
+	justify-content: space-between;
+}
+
+.recipe-details {
+	align-items: flex-start;
+}
+
+.recipe-view__container__4 {
+	display: flex;
+	width: 40vw;
+	justify-content: space-between;
 }
 
 .hidden {
