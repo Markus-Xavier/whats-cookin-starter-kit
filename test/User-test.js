@@ -16,7 +16,7 @@ describe.only('User', function() {
   })
 
   it('should have an Id property', function() {
-    assert.isNumber(user1.Id);
+    assert.isNumber(user1.id);
     assert.isNumber(user2.id);
   })
 
@@ -26,7 +26,7 @@ describe.only('User', function() {
   })
 
   it('should have a wants to cook property', function() {
-    assert.deepEqual(user1.wanToCook, []);
+    assert.deepEqual(user1.wantToCook, []);
     assert.deepEqual(user2.wantToCook, []);
   })
 })
