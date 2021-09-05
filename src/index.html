@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <title>Whats Cookin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Spartan:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -135,7 +138,7 @@
           </section>
         </section>
       </section>
-      <section class="filtered-recipes-view">
+      <section class="filtered-recipes-view hidden">
         <div class="heading">
           <h2>SEARCH RESULTS</h2>
         </div>
@@ -202,18 +205,56 @@
             <div>Ingredient Cost</div>
           </section> -->
       </section>
-      <section class="recipe-view hidden">
-        <section id="recipeRender">
-          <!-- <section id="recipeInfo">
-            <div>Back to explore</div>
-            <div>RECIPE</div>
-            <section>Image/favorite/want to cook</section>
-            <div>Tittle/Tags</div>
+      <section class="recipe-view ">
+        <section class="recipe-view__container" id="recipeRender">
+          <section class="recipe-view__container__1" id="recipeInfo">
+            <div class="cook-prompt">
+              <h2>Ready, set, COOK!</h2>
+            </div>
+          <section class="recipe-view__container__2">
+            <div class="back-to-explore">
+              <ul>
+                <li><a href="#">← BACK TO EXPLORE</a></li>
+              </ul>
+            </div>
+            <img class="img-recipe" src="assets/images/spaghetti.jpeg">
+            <div class="actions">
+              <ul>
+                <li><a href="#">✩ Favorite</a></li>
+                <li><a href="#">+ Want to Cook</a></li>
+              </ul>
+            </div>
           </section>
-          <section>
-            <section>Ingredients/quantity/cost</section>
-            <section>Instructions</section>
-          </section> -->
+            <section class="recipe-view__container__3">
+              <div>
+                <h3 class="recipe-tittle">Spaghetti & Meatballs</h3>
+                <p class="recipe-tags">tags: #meat #main #italian #sauce</p>
+              </div>
+              <div>
+                <h4 class="ingredients-cost">Ingredients Cost $10.00</h4>
+              </div>
+            </section>
+          </section>
+          <section class="recipe-view__container__4">
+            <section>
+              <h3 class="ingedients-tittle">Ingredients</h3>
+              <ul>
+                <li>Cheese 0.5 cups</li>
+                <li>Pasta  1 cup</li>
+                <li>Ground beef 1 cup</li>
+                <li>Tomato sauce 2 cups</li>
+              </ul>
+            </section>
+            <section>
+              <h3 class="instructions-tittle">Ingredients</h3>
+              <ul class="instructions-steps">
+                <li>⒈ Cook the beef with the garlic</li>
+                <li>⒉ Blend the tomatoes and cook them until reduced</li>
+                <li>3. Add salt and pepper </li>
+                <li>4. Mix with the cooked pasta</li>
+              </ul>
+            </section>
+          </section>
         </section>
       </section>
       <section class="favorites-view hidden">
@@ -234,10 +275,11 @@
       </section>
     </section>
     </body>
+  <script type="text/javascript" src="main.js"></script>
   <script type="text/javascript" src="classes/Ingredient.js"></script>
   <script type="text/javascript" src="classes/Recipe.js"></script>
   <script type="text/javascript" src="classes/DataManager.js"></script>
   <script type="text/javascript" src="classes/FormManager.js"></script>
   <script type="text/javascript" src="classes/RecipeManager.js"></script>
-  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="classes/User.js"></script>
 </html>
