@@ -1,7 +1,6 @@
 /* font-family: 'Roboto', sans-serif;
 font-family: 'Spartan', sans-serif; */
 
-
 * {
 	margin: 0;
 	padding: 0;
@@ -71,7 +70,6 @@ a:link {
 }
 
 .main-screen,
-.filtered-recipes-view,
 .recipe-view,
 .favorites-view,
 .want-to-cook-view,
@@ -79,6 +77,12 @@ a:link {
 .recipe-details,
 .ingredients-list,
 .instructions-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.filtered-recipes-view {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -255,18 +259,14 @@ input[type=checkbox]: checked {
 	justify-content: space-between;
 }
 
-.hidden {
-	display: none;
-}
-
 #search-bar-filtered-view {
 	height: 24px;
 }
 
 .filtered-results-section {
-	width: 100%;
+	width: 1080px;
 	height: 100%;
-	/* border: 1px solid black; */
+	border: 1px solid black;
 	display: flex;
 	flex-direction: column;
 }
@@ -317,4 +317,8 @@ input[type=checkbox]: checked {
 
 .recipe-desc2 {
 	font-size: 14px;
+}
+
+.hidden {
+	display: none;
 }
