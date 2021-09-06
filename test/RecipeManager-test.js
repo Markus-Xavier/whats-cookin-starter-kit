@@ -1,7 +1,6 @@
 import { assert } from 'chai';
 import RecipeManager from '../src/classes/RecipeRepository';
 
-
 describe('Recipe Manager', function() {
   let recipeManager;
   
