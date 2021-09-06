@@ -20,9 +20,9 @@
       </a>
       <div class="right-container">
         <ul class="nav__links">
-          <li class="nav__items" id="exploreBtn"><a href="#">EXPLORE</a></li>
-          <li class="nav__items" id="favoritesBtn"><a href="#">FAVORITES</a></li>
-          <li class="nav__items" id="wantToCookBtn"><a href="#">WANT TO COOK</a></li>
+          <li class="nav__items" id="exploreNav"><a href="#">EXPLORE</a></li>
+          <li class="nav__items" id="favoritesNav"><a href="#">FAVORITES</a></li>
+          <li class="nav__items" id="wantToCookNav"><a href="#">WANT TO COOK</a></li>
         </ul>
       </div>
     </nav>
@@ -85,9 +85,9 @@
           </section>
         </form>
       </section>
-      <section class="carousel-section" id="popularRecipesCarousel">
+      <section class="carousel-section" id="popularRecipesCarouselSection">
         <h3 class="carousel-heading">popular recipes</h3>
-        <section class="carousel" id="popularRecipesCarousel">
+        <section class="carousel" id="randomPopularRecipesCarousel">
           <div class="recipe-card1">
             <img src="assets/images/spaghetti.jpeg">
             <h4>Recipe name</h4>
@@ -114,7 +114,7 @@
           </div>
         </section>
       </section>
-      <section class="carousel-section" id="wantToCookCarousel">
+      <section class="carousel-section" id="wantToCookCarouselSection">
         <h3 class="carousel-heading">i want to cook</h3>
         <section class="carousel" id="wantToCookCarousel">
           <div class="recipe-card1">
@@ -340,7 +340,7 @@
         </section>
       </section>
     </section>
-    <section class="favorites-view hidden">
+    <section class="favorites-view hidden" id="favoritesView">
       <div class="heading">
         <h2>SEARCH RESULTS</h2>
       </div>
@@ -490,7 +490,7 @@
         </div>
       </section>
     </section>
-    <section class="want-to-cook-view hidden">
+    <section class="want-to-cook-view hidden" id="wantToCook">
       <div class="heading">
         <h2>SEARCH RESULTS</h2>
       </div>
