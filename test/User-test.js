@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import User from '../src/classes/User';
 
-describe.only('User', function() {
+describe('User', function() {
   let user1, user2;
 
   beforeEach(function() {
