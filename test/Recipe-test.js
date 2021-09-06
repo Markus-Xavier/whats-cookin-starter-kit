@@ -6,7 +6,7 @@ import { ingredientsDataBase } from '../src/data/dataTestRecipe';
 import { recipeDetails1 } from '../src/data/dataTestRecipe';
 import { recipeDetails2 } from '../src/data/dataTestRecipe';
 
-describe.only('Recipe', function() {
+describe('Recipe', function() {
   let  recipe1, recipe2;
   beforeEach(function() {
     recipe1 = new Recipe(recipeDetails1, ingredientsDataBase);
