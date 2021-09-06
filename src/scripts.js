@@ -3,6 +3,10 @@ import apiCalls from './apiCalls';
 import DataManager from './classes/DataManager';
 import recipeData from './data/recipes';
 import ingredientsData from './data/ingredients';
+import FormManager from './classes/FormManager';
+import FormHandler from './classes/FormHandler';
+import Ingredient from './classes/Ingredient';
+import Recipe from './classes/Recipe';
 import users from './data/users';
 
 // DOM elements
@@ -19,6 +23,8 @@ const searchBar = document.getElementById('searchBarInput');
 // Classes Instances
 
 const dataBase = new DataManager();
+const formHandler = new FormHandler();
+const formManager = new FormManager();
 dataBase.setRecipes(recipeData);
 dataBase.setIngredients(ingredientsData);
 dataBase.setTags();
