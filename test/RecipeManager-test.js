@@ -31,7 +31,7 @@ describe.only('Recipe Manager', function() {
 
   it('should create a instance of recipe class for each filtered recipe', function() {
     recipeManager.storeFilteredRecipes(filteredRecipes);
-    recipeManager.createRecipeClass();
+    recipeManager.createRecipeInstances();
     assert.deepEqual(recipeManager.filteredRecipes, [recipe1, recipe2]);
   });
 });
