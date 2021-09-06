@@ -3,8 +3,112 @@
   <head>
     <meta charset="UTF-8">
     <title>Whats Cookin</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <h1>Whats Cookin</h1>
+    <header>
+     <section></section>
+      <nav class="navbar">
+      <a href="#"><h1>Whats Cookin</h1></a>
+      <ul class="nav__links">
+        <li class="nav__items"><a href="#">EXPLORE</a></li>
+        <li class="nav__items"><a href="#">FAVORITES</a></li>
+        <li class="nav__items"><a href="#">WANT TO COOK</a></li>
+      </ul>
+      </nav>
+    </header>
+     <section id="search">
+      <div>Prompt for search</div>
+      <form>
+      <div id="searchBar">      </div>
+      <div id="tags">        </div>
+      </form>
+    </section>
+    <section class="carousel" id="popularRecipes">
+      <div>POPULAR RECIPES</div>
+      <section id="randomRecipes">
+        <div> Recipe card</div>
+        <div> Recipe card</div>
+        <div> Recipe card</div>
+        <div> Recipe card</div>
+      </section>
+    </section>
+    <section class="carousel" id="wantToCook">
+      <div>wantToCook</div>
+      <section id="wantToCookRecipes">
+        <div> Recipe card</div>
+        <div> Recipe card</div>
+        <div> Recipe card</div>
+        <div> Recipe card</div>
+      </section>
+    </section>
+    <section class=" .hidden" id="filteredRecipes">
+      <section>
+        <img>
+        <section>
+          <div>Recipe Name</div>
+          <div>Tags</div>
+          <div>Recipe Description</div>
+        </section>
+        <div>Date</div>
+        <section>
+          <img>
+          <section>
+            <div>Recipe Name</div>
+            <div>Tags</div>
+            <div>Recipe Description</div>
+          </section>
+          <div>Date</div>
+        </section>
+        <section>
+          <img>
+          <section>
+              <div>Recipe Name</div>
+              <div>Tags</div>
+              <div>Recipe Description</div>
+         </section>
+         <div>Date</div>
+        </section>
+        <section>
+          <img>
+          <section>
+              <div>Recipe Name</div>
+              <div>Tags</div>
+              <div>Recipe Description</div>
+         </section>
+         <div>Date</div>
+        </section>
+        <section>
+          <img>
+          <section>
+              <div>Recipe Name</div>
+              <div>Tags</div>
+              <div>Recipe Description</div>
+         </section>
+         <div>Date</div>
+        </section>
+    </section>
+    <section class=" .hidden" id="recipeRender">
+      <section id="recipeInfo">
+        <div>Image/favorite/want to cook</div>
+        <div>Tittle/Cost</div>
+      </section>
+      <section>
+        <div>Ingredients</div>
+        <div>Instructions</div>
+      </section>
+    </section>
+    <section class=" .hidden" id="favorites">
+
+    </section>
+    <section class=" .hidden" id="wantToCook">
+
+    </section>
   </body>
+  <script type="text/javascript" src="classes/Ingredient.js"></script>
+  <script type="text/javascript" src="classes/Recipe.js"></script>
+  <script type="text/javascript" src="classes/DataManager.js"></script>
+  <script type="text/javascript" src="classes/FormManager.js"></script>
+  <script type="text/javascript" src="classes/RecipeManager.js"></script>
+  <script type="text/javascript" src="main.js"></script>
 </html>
