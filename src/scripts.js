@@ -6,6 +6,7 @@ import ingredientsData from './data/ingredients';
 import users from './data/users';
 
 // DOM elements
+
 const explore = document.getElementById('exploreNav');
 const favorites = document.getElementById('favoritesNav');
 const wantToCook = document.getElementById('wantToCookNav');
