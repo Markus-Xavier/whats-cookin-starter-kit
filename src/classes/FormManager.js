@@ -1,8 +1,8 @@
 import FormHandler from "./FormHandler";
 export default class FormManager {
-  constructor(formName, callBack) {
+  constructor(formName, callBack, dataManager) {
     this.form = document.querySelector(`form[name="${formName}"]`);
-    this.formHandler = new FormHandler({ tags: ['dog', 'bird'], keyWords: ['cat'], ingredients: [] });
+    this.formHandler = new FormHandler(dataManager);
     this.callBack = callBack;
     this.initialize();
   }
