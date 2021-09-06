@@ -6,11 +6,11 @@ import { ingredientsDataBase } from '../src/data/dataTestRecipe';
 import { recipeDetails1 } from '../src/data/dataTestRecipe';
 import { recipeDetails2 } from '../src/data/dataTestRecipe';
 
-describe('Recipe', function() {
+describe.only('Recipe', function() {
   let  recipe1, recipe2;
   beforeEach(function() {
-    recipe1 = new Recipe(recipeDetails1);
-    recipe2 = new Recipe(recipeDetails2);
+    recipe1 = new Recipe(recipeDetails1, ingredientsDataBase);
+    recipe2 = new Recipe(recipeDetails2, ingredientsDataBase);
   })
   it('should be a function', function() {
     assert.isFunction(Recipe);
@@ -53,9 +53,9 @@ describe('Recipe', function() {
     assert.equal(recipe1.processedIngredients.length, recipeDetails1.ingredients.length);
     assert.equal(recipe2.processedIngredients.length, recipeDetails2.ingredients.length);
     assert.instanceOf(recipe1.processedIngredients[0], Ingredient)
-    assert.deepEqual(recipe1.processedIngredients[0], {id: 20081, name: 'wheat flour', amount: 1.5, unit: 'c', costInCentsPerUnit: 142, ingredientCost: 2.13});
+    assert.equal(recipe1.processedIngredients[0].name, 'wheat flour');
     assert.instanceOf(recipe2.processedIngredients[0], Ingredient)
-    assert.deepEqual(recipe2.processedIngredients[0], {id: 1009016, name: 'apple cider', amount: 1.5, unit: 'cups', costInCentsPerUnit: 468, ingredientCost: 7.02});
+    assert.equal(recipe2.processedIngredients[0].name, 'apple cider');
   })
 
 })
