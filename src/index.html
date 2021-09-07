@@ -20,8 +20,8 @@
       </a>
       <div class="right-container">
         <ul class="nav__links">
-          <li class="nav__items" id="exploreNav"><a href="#">EXPLORE</a></li>
-          <li class="nav__items" id="favoritesNav"><a href="#">FAVORITES</a></li>
+          <li class="nav__items1" id="exploreNav"><button>EXPLORE</button></li>
+          <li class="nav__items" id="favoritesNav"><a href="#" >FAVORITES</a></li>
           <li class="nav__items" id="wantToCookNav"><a href="#">WANT TO COOK</a></li>
         </ul>
       </div>
@@ -87,39 +87,10 @@
         </form>
       </section>
     </div>
-    <section class="main-screen hidden">
+    <section class="main-screen hidden" id="mainScreen">
       <section class="carousel-section" id="popularRecipesCarouselSection">
         <h3 class="carousel-heading">popular recipes</h3>
         <section class="carousel" id="randomPopularRecipesCarousel">
-          <div class="recipe-card1">
-            <img src="assets/images/spaghetti.jpeg">
-            <h4>Recipe name</h4>
-            <div class="recipe-tags1">Tags</div>
-            <p class="recipe-desc1">Description</p>
-          </div>
-          <div class="recipe-card1">
-            <img src="assets/images/spaghetti.jpeg">
-            <h4>Recipe name</h4>
-            <div class="recipe-tags1">Tags</div>
-            <p class="recipe-desc1">Description</p>
-          </div>
-          <div class="recipe-card1">
-            <img src="assets/images/spaghetti.jpeg">
-            <h4>Recipe name</h4>
-            <div class="recipe-tags1">Tags</div>
-            <p class="recipe-desc1">Description</p>
-          </div>
-          <div class="recipe-card1">
-            <img src="assets/images/spaghetti.jpeg">
-            <h4>Recipe name</h4>
-            <div class="recipe-tags1">Tags</div>
-            <p class="recipe-desc1">Description</p>
-          </div>
-        </section>
-      </section>
-      <section class="carousel-section" id="wantToCookCarouselSection">
-        <h3 class="carousel-heading">i want to cook</h3>
-        <section class="carousel" id="wantToCookCarousel">
           <div class="recipe-card1">
             <img src="assets/images/spaghetti.jpeg">
             <h4>Recipe name</h4>
@@ -164,84 +135,9 @@
             <p class="ingredients-cost1">Ingredient Cost
           </div>
         </div>
-        <div class="recipe-card2">
-          <div class="recipe-card2-image-container">
-            <img class="card2-img" src="assets/images/spaghetti.jpeg">
-          </div>
-          <div class="recipe-card2-body">
-            <h4 class="card2-name">Recipe name</h4>
-            <div class="card2-recipe-tags">
-              <button class="pill-button2" id="lunch">Lunch</button>
-              <button class="pill-button2" id="lunch">Lunch</button>
-              <button class="pill-button2" id="lunch">Lunch</button>
-            </div>
-            <p class="recipe-desc1">Description</p>
-            <p class="ingredients-cost1">Ingredient Cost
-          </div>
-        </div>
-        <div class="recipe-card2">
-          <div class="recipe-card2-image-container">
-            <img class="card2-img" src="assets/images/spaghetti.jpeg">
-          </div>
-          <div class="recipe-card2-body">
-            <h4 class="card2-name">Recipe name</h4>
-            <div class="card2-recipe-tags">
-              <button class="pill-button2" id="lunch">Lunch</button>
-              <button class="pill-button2" id="lunch">Lunch</button>
-              <button class="pill-button2" id="lunch">Lunch</button>
-            </div>
-            <p class="recipe-desc1">Description</p>
-            <p class="ingredients-cost1">Ingredient Cost
-          </div>
-        </div>
-        <div class="recipe-card2">
-          <div class="recipe-card2-image-container">
-            <img class="card2-img" src="assets/images/spaghetti.jpeg">
-          </div>
-          <div class="recipe-card2-body">
-            <h4 class="card2-name">Recipe name</h4>
-            <div class="card2-recipe-tags">
-              <button class="pill-button2" id="lunch">Lunch</button>
-              <button class="pill-button2" id="lunch">Lunch</button>
-              <button class="pill-button2" id="lunch">Lunch</button>
-            </div>
-            <p class="recipe-desc1">Description</p>
-            <p class="ingredients-cost1">Ingredient Cost
-          </div>
-        </div>
-        <div class="recipe-card2">
-          <div class="recipe-card2-image-container">
-            <img class="card2-img" src="assets/images/spaghetti.jpeg">
-          </div>
-          <div class="recipe-card2-body">
-            <h4 class="card2-name">Recipe name</h4>
-            <div class="card2-recipe-tags">
-              <button class="pill-button2" id="lunch">Lunch</button>
-              <button class="pill-button2" id="lunch">Lunch</button>
-              <button class="pill-button2" id="lunch">Lunch</button>
-            </div>
-            <p class="recipe-desc2">Description</p>
-            <p class="ingredients-cost1">Ingredient Cost
-          </div>
-        </div>
-        <div class="recipe-card2">
-          <div class="recipe-card2-image-container">
-            <img class="card2-img" src="assets/images/spaghetti.jpeg">
-          </div>
-          <div class="recipe-card2-body">
-            <h4 class="card2-name">Recipe name</h4>
-            <div class="card2-recipe-tags">
-              <button class="pill-button2" id="lunch">Lunch</button>
-              <button class="pill-button2" id="lunch">Lunch</button>
-              <button class="pill-button2" id="lunch">Lunch</button>
-            </div>
-            <p class="recipe-desc2">Description</p>
-            <p class="ingredients-cost1">Ingredient Cost
-          </div>
-        </div>
       </section>
     </section>
-    <section class="favorites-view" id="favoritesView">
+    <section class="favorites-view hidden" id="favoritesView">
       <section class="filtered-results-section" id="favorite-recipes">
         <div class="recipe-card2">
           <div class="recipe-card2-image-container">
@@ -336,7 +232,7 @@
       </section>
     </section>
     <section class="want-to-cook-view hidden" id="wantToCookView">
-      <section class="filtered-results-section" id=" want-to-cook-recipes">
+      <section class="filtered-results-section" id="want-to-cook-recipes">
         <div class="recipe-card2">
           <div class="recipe-card2-image-container">
             <img class="card2-img" src="assets/images/spaghetti.jpeg">
