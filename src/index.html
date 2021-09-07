@@ -28,63 +28,65 @@
     </nav>
   </header>
   <section class="display-area">
-    <div class="heading">
-      <h2>WHAT'S COOKIN'</h2>
+    <div class="heading-and-search-bar">
+      <div class="heading">
+        <h2>WHAT'S COOKIN'</h2>
+      </div>
+      <section class="search-section" id="searchSection">
+        <form>
+          <div class="search-bar-container">
+            <input type=text class="search-bar" id="searchBarInput" placeholder="Search for a recipe or ingredient">
+          </div>
+          <section class="tagsSection">
+            <input type="checkbox" id="lunch" name="lunch" value="lunch">
+            <label for="lunch">
+              <button class="pill-button" id="lunch">Lunch</button>
+            </label>
+            <input type="checkbox" id="dinner" name="dinner" value="dinner">
+            <label for="dinner">
+              <button class="pill-button" id="dinner">Dinner</button>
+            </label>
+            <input type="checkbox" id="breakfast" name="breakfast" value="breakfast">
+            <label for="breakfast">
+              <button class="pill-button" id="breakfast">Breakfast</button>
+            </label>
+            <input type="checkbox" id="sauce" name="sauce" value="sauce">
+            <label for="sauce">
+              <button class="pill-button" id="vegan">Sauce</button>
+            </label>
+            <input type="checkbox" id="salad" name="salad" value="salad">
+            <label for="salad">
+              <button class="pill-button" id="grill">Salad</button>
+            </label>
+            <input type="checkbox" id="condiment" name="condiment" value="condiment">
+            <label for="condiment">
+              <button class="pill-button" id="asian">Condiment</button>
+            </label>
+            <input type="checkbox" id="antipasti" name="antipasti" value="antipasti">
+            <label for="antipasti">
+              <button class="pill-button" id="dessert">Antipasti</button>
+            </label>
+            <input type="checkbox" id="snack" name="snack" value="snack">
+            <label for="snack">
+              <button class="pill-button" id="italian">Snack</button>
+            </label>
+            <input type="checkbox" id="appetizer" name="appetizer" value="appetizer">
+            <label for="appetizer">
+              <button class="pill-button" id="appetizer">Appetizer</button>
+            </label>
+            <input type="checkbox" id="starter" name="starter" value="starter">
+            <label for="starter">
+              <button class="pill-button" id="starter">Starter</button>
+            </label>
+            <input type="checkbox" id="main dish" name="main dish" value="main dish">
+            <label for="main dish">
+              <button class="pill-button" id="main dish">Main Dish</button>
+            </label>
+          </section>
+          <div onclick="submit_form()"></div>
+        </form>
+      </section>
     </div>
-    <section class="search-section" id="searchSection">
-      <form>
-        <div class="search-bar-container">
-          <input type=text class="search-bar" id="searchBarInput" placeholder="Search for a recipe or ingredient">
-        </div>
-        <section class="tagsSection">
-          <input type="checkbox" id="lunch" name="lunch" value="lunch">
-          <label for="lunch">
-            <button class="pill-button" id="lunch">Lunch</button>
-          </label>
-          <input type="checkbox" id="dinner" name="dinner" value="dinner">
-          <label for="dinner">
-            <button class="pill-button" id="dinner">Dinner</button>
-          </label>
-          <input type="checkbox" id="breakfast" name="breakfast" value="breakfast">
-          <label for="breakfast">
-            <button class="pill-button" id="breakfast">Breakfast</button>
-          </label>
-          <input type="checkbox" id="sauce" name="sauce" value="sauce">
-          <label for="sauce">
-            <button class="pill-button" id="vegan">Sauce</button>
-          </label>
-          <input type="checkbox" id="salad" name="salad" value="salad">
-          <label for="salad">
-            <button class="pill-button" id="grill">Salad</button>
-          </label>
-          <input type="checkbox" id="condiment" name="condiment" value="condiment">
-          <label for="condiment">
-            <button class="pill-button" id="asian">Condiment</button>
-          </label>
-          <input type="checkbox" id="antipasti" name="antipasti" value="antipasti">
-          <label for="antipasti">
-            <button class="pill-button" id="dessert">Antipasti</button>
-          </label>
-          <input type="checkbox" id="snack" name="snack" value="snack">
-          <label for="snack">
-            <button class="pill-button" id="italian">Snack</button>
-          </label>
-          <input type="checkbox" id="appetizer" name="appetizer" value="appetizer">
-          <label for="appetizer">
-            <button class="pill-button" id="appetizer">Appetizer</button>
-          </label>
-          <input type="checkbox" id="starter" name="starter" value="starter">
-          <label for="starter">
-            <button class="pill-button" id="starter">Starter</button>
-          </label>
-          <input type="checkbox" id="main dish" name="main dish" value="main dish">
-          <label for="main dish">
-            <button class="pill-button" id="main dish">Main Dish</button>
-          </label>
-        </section>
-        <div onclick="submit_form()"></div>
-      </form>
-    </section>
     <section class="main-screen hidden">
       <section class="carousel-section" id="popularRecipesCarouselSection">
         <h3 class="carousel-heading">popular recipes</h3>
@@ -145,9 +147,8 @@
         </section>
       </section>
     </section>
-
-    <section class="filtered-recipes-view hidden" id="filteredRecipes">
-      <section class="filtered-results-section" id="filteredResults">
+    <section class="filtered-recipes-view hidden" id="filteredRecipesView">
+      <section class="filtered-results-section" id="filtered-search-results">
         <div class="recipe-card2">
           <div class="recipe-card2-image-container">
             <img class="card2-img" src="assets/images/spaghetti.jpeg">
@@ -240,8 +241,8 @@
         </div>
       </section>
     </section>
-    <section class="favorites-view hidden" id="favoritesView">
-      <section class="filtered-results-section" id="favorites-view">
+    <section class="favorites-view" id="favoritesView">
+      <section class="filtered-results-section" id="favorite-recipes">
         <div class="recipe-card2">
           <div class="recipe-card2-image-container">
             <img class="card2-img" src="assets/images/spaghetti.jpeg">
@@ -334,8 +335,8 @@
         </div>
       </section>
     </section>
-    <section class="want-to-cook-view hidden" id="wantToCook">
-      <section class="filtered-results-section">
+    <section class="want-to-cook-view hidden" id="wantToCookView">
+      <section class="filtered-results-section" id=" want-to-cook-recipes">
         <div class="recipe-card2">
           <div class="recipe-card2-image-container">
             <img class="card2-img" src="assets/images/spaghetti.jpeg">
@@ -428,7 +429,7 @@
         </div>
       </section>
     </section>
-    <section class="recipe-view" id="recipeView">
+    <section class="recipe-view hidden" id="recipeView">
       <section class="recipe-view__container__1" id="recipeInfo">
         <div class="cook-prompt">
           <h2>Ready, Set, COOK!</h2>
@@ -476,12 +477,5 @@
     </section>
   </section>
 </body>
-<script type="text/javascript" src="scripts.js"></script>
-<script type="text/javascript" src="classes/Ingredient.js"></script>
-<script type="text/javascript" src="classes/Recipe.js"></script>
-<script type="text/javascript" src="classes/DataManager.js"></script>
-<script type="text/javascript" src="classes/FormManager.js"></script>
-<script type="text/javascript" src="classes/RecipeManager.js"></script>
-<script type="text/javascript" src="classes/User.js"></script>
 
 </html>

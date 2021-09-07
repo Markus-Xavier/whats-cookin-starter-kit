@@ -70,10 +70,11 @@ a:link {
 }
 
 .main-screen,
+.filtered-recipes-view,
 .recipe-view,
-.favorites-view,
 .want-to-cook-view,
 .actions,
+.heading-and-search-bar,
 .recipe-details,
 .ingredients-list,
 .instructions-list {
@@ -82,11 +83,17 @@ a:link {
 	align-items: center;
 }
 
-.filtered-recipes-view {
+/* .filtered-recipes-view {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-}
+} */
+
+/* .heading-and-search-bar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+} */
 
 .search-section {
 	width: 1080px;
