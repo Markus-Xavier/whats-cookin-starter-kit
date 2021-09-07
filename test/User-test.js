@@ -1,12 +1,13 @@
 import { assert } from 'chai';
 import User from '../src/classes/User';
+import users from '../src/data/usersData';
 
 describe.only('User', function() {
   let user1, user2;
 
   beforeEach(function() {
-    user1 = new User()
-    user2 = new User()
+    user1 = new User(users[0]);
+    user2 = new User(users[1]);
   })
 
   it('should be a function', function() {
@@ -16,8 +17,18 @@ describe.only('User', function() {
   })
 
   it('should have an Id property', function() {
-    assert.isNumber(user1.id);
-    assert.isNumber(user2.id);
+    assert.equal(user1.id, 1);
+    assert.equal(user2.id, 2);
+  })
+
+  it('should have a name', function() {
+    assert.equal(user1.name, "Saige O'Kon");
+    assert.equal(user2.name, 'Ephraim Goyette');
+  })
+
+  it('should have a pantry', function() {
+    assert.isArray(user1.pantry);
+    assert.isArray(user2.pantry);
   })
 
   it('should have a favorite recipes property', function() {
