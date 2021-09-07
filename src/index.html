@@ -38,52 +38,83 @@
             <input name="user-input" type=text class="search-bar" id="searchBarInput" placeholder="Search for a recipe or ingredient">
           </div>
           <section class="tagsSection">
-            <input type="checkbox" id="lunch" name="tag" value="lunch">
-            <label for="lunch">
-              <button class="pill-button" id="lunch">Lunch</button>
-            </label>
-            <input type="checkbox" id="dinner" name="tag" value="dinner">
-            <label for="dinner">
-              <button class="pill-button" id="dinner">Dinner</button>
-            </label>
-            <input type="checkbox" id="breakfast" name="tag" value="breakfast">
-            <label for="breakfast">
-              <button class="pill-button" id="breakfast">Breakfast</button>
-            </label>
-            <input type="checkbox" id="sauce" name="tag" value="sauce">
-            <label for="sauce">
-              <button class="pill-button" id="vegan">Sauce</button>
-            </label>
-            <input type="checkbox" id="salad" name="tag" value="salad">
-            <label for="salad">
-              <button class="pill-button" id="grill">Salad</button>
-            </label>
-            <input type="checkbox" id="condiment" name="tag" value="condiment">
-            <label for="condiment">
-              <button class="pill-button" id="asian">Condiment</button>
-            </label>
             <input type="checkbox" id="antipasti" name="tag" value="antipasti">
-            <label for="antipasti">
-              <button class="pill-button" id="dessert">Antipasti</button>
-            </label>
-            <input type="checkbox" id="snack" name="tag" value="snack">
-            <label for="snack">
-              <button class="pill-button" id="italian">Snack</button>
-            </label>
-            <input type="checkbox" id="appetizer" name="tag" value="appetizer">
-            <label for="appetizer">
-              <button class="pill-button" id="appetizer">Appetizer</button>
+            <label for="antipasti" class="pill-button">
+              antipasti
             </label>
             <input type="checkbox" id="starter" name="tag" value="starter">
-            <label for="starter">
-              <button class="pill-button" id="starter">Starter</button>
+            <label for="starter" class="pill-button">
+              starter
             </label>
-            <input type="checkbox" id="main dish" name="tag" value="main dish">
-            <label for="main dish">
-              <button class="pill-button" id="main dish">Main Dish</button>
+            <input type="checkbox" id="snack" name="tag" value="snack">
+            <label for="snack" class="pill-button">
+              snack
+            </label>
+            <input type="checkbox" id="appetizer" name="tag" value="appetizer">
+            <label for="appetizer" class="pill-button">
+              appetizer
+            </label>
+            <input type="checkbox" id="antipasto" name="tag" value="antipasto">
+            <label for="antipasto" class="pill-button">
+              antipasto
+            </label>
+            <input type="checkbox" id="hor d'oeuvre" name="tag" value="hor d'oeuvre">
+            <label for="hor d'oeuvre" class="pill-button1">
+              Hor d'oeuvre
+            </label>
+            <input type="checkbox" id="lunch" name="tag" value="lunch">
+            <label for="lunch" class="pill-button">
+              lunch
+            </label>
+            <input type="checkbox" id="mainCourse" name="tag" value="main course">
+            <label for="mainCourse" class="pill-button">
+              main course
+            </label>
+            <input type="checkbox" id="mainDish" name="tag" value="main dish">
+            <label for="mainDish" class="pill-button">
+              main dish
+            </label>
+            <input type="checkbox" id="dinner" name="tag" value="dinner">
+            <label for="dinner" class="pill-button">
+              dinner
+            </label>
+            <input type="checkbox" id="sauce" name="tag" value="sauce">
+            <label for="sauce" class="pill-button">
+              sauce
+            </label>
+            <input type="checkbox" id="sideDish" name="tag" value="side dish">
+            <label for="sideDish" class="pill-button">
+              side dish
+            </label>
+            <input type="checkbox" id="morningMeal" name="tag" value="morning meal">
+            <label for="morningMeal" class="pill-button">
+              morning meal
+            </label>
+            <input type="checkbox" id="brunch" name="tag" value="brunch">
+            <label for="brunch" class="pill-button">
+              brunch
+            </label>
+            <input type="checkbox" id="breakfast" name="tag" value="breakfast">
+            <label for="breakfast" class="pill-button">
+              breakfast
+            </label>
+            <input type="checkbox" id="salad" name="tag" value="salad">
+            <label for="salad" class="pill-button">
+              salad
+            </label>
+            <input type="checkbox" id="condiment" name="tag" value="condiment">
+            <label for="condiment" class="pill-button">
+              condiment
+            </label>
+            <input type="checkbox" id="dip" name="tag" value="dip">
+            <label for="dip" class="pill-button">
+              dip
+            </label>
+            <input type="checkbox" id="spread" name="tag" value="spread">
+            <label for="spread" class="pill-button">
+              spread
             </label>
           </section>
-          <div onclick="submit_form()"></div>
         </form>
       </section>
     </div>
@@ -137,7 +168,7 @@
         </div>
       </section>
     </section>
-    <section class="favorites-view hidden" id="favoritesView">
+    <section class="favorites-view" id="favoritesView">
       <section class="filtered-results-section" id="favorite-recipes">
         <div class="recipe-card2">
           <div class="recipe-card2-image-container">
@@ -331,19 +362,19 @@
           <h2>Ready, Set, COOK!</h2>
         </div>
       </section>
-      <section class="recipe-view__container__2">
+      <!-- <section class="recipe-view__container__2">
         <div class="back-to-explore">
           <p>← BACK TO EXPLORE</p>
         </div>
         <img class="img-recipe" src="assets/images/spaghetti.jpeg">
         <div class="actions">
-          <p>✩ Favorite</p>
-          <p>+ Want to Cook</p>
+          <p id="addRecipesToFavorites">✩ Favorite</p>
+          <p id="addRecipesToFavorites">+ Want to Cook</p>
         </div>
       </section>
       <section class="recipe-view__container__3">
         <div class="recipe-details">
-          <h3 class="recipe-tittle">Spaghetti & Meatballs</h3>
+          <h3 class="recipe-title">Spaghetti & Meatballs</h3>
           <p class="recipe-tags">tags: #meat #main #italian #sauce</p>
         </div>
         <div>
@@ -352,7 +383,7 @@
       </section>
       <section class="recipe-view__container__4">
         <section class="ingredients-list">
-          <h3 class="ingedients-tittle">Ingredients</h3>
+          <h3 class="ingedients-title">Ingredients</h3>
           <ul>
             <li>Cheese 0.5 cups</li>
             <li>Pasta 1 cup</li>
@@ -369,7 +400,7 @@
             <li>Mix with the cooked pasta</li>
           </ol>
         </section>
-      </section>
+      </section> -->
     </section>
   </section>
 </body>
