@@ -2,17 +2,16 @@ import { assert } from 'chai';
 import DataManager from '../src/classes/DataManager';
 import recipes from '../src/data/recipes';
 import ingredients from '../src/data/ingredients';
-// import { recipeTags } from './DataManagerTestDatabase';
-import { testRecipes } from './DataManagerTestDatabase';
-import { userInput } from './DataManagerTestDatabase';
-import { userInput2 } from './DataManagerTestDatabase';
-import { userInput3 } from './DataManagerTestDatabase';
-import { userInput4 } from './DataManagerTestDatabase';
-import { filteredResultsByTag } from './DataManagerTestDatabase';
-import { filteredResultsByKeywords } from './DataManagerTestDatabase';
-import { filteredResultsByTagsAndKeywords } from './DataManagerTestDatabase';
+import { testRecipes } from '../src/data/DataManagerTestDatabase';
+import { userInput } from '../src/data/DataManagerTestDatabase';
+import { userInput2 } from '../src/data/DataManagerTestDatabase';
+import { userInput3 } from '../src/data/DataManagerTestDatabase';
+import { userInput4 } from '../src/data/DataManagerTestDatabase';
+import { filteredResultsByTag } from '../src/data/DataManagerTestDatabase';
+import { filteredResultsByKeywords } from '../src/data/DataManagerTestDatabase';
+import { filteredResultsByTagsAndKeywords } from '../src/data/DataManagerTestDatabase';
 
-describe('DataManager', function() {
+describe.only('DataManager', function() {
   let dataManager;
   let user1;
   let user2;
@@ -74,7 +73,7 @@ describe('DataManager', function() {
   it('should return a list of recipes filtered by tags and keywords', function () {
     dataManager.setRecipes(testRecipes);
     dataManager.filterRecipes(userInput);
-
+    
     assert.deepEqual(dataManager.filteredRecipes, filteredResultsByTagsAndKeywords)
   });
 

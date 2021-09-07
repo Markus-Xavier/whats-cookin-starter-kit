@@ -7,6 +7,7 @@ export default class DataManager {
     this.ingredients = emptyArray;
     this.tags = emptyArray;
     this.filteredRecipes = emptyArray;
+    this.users = emptyArray;
   }
 
   setRecipes(recipes) {
@@ -24,6 +25,10 @@ export default class DataManager {
       !accumulator.includes(tag) && accumulator.push(tag);
       return accumulator;
     }, []);
+  }
+
+  setUsers(usersData) {
+    this.users = usersData;
   }
 
   checkForMatch(searchQuery) {
