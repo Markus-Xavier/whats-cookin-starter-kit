@@ -25,7 +25,11 @@ export default class FormManager {
     }
 
     const sortedSearch = this.formHandler.sortUserSearch(searchQuery.split(' '));
-    this.callBack(sortedSearch);
+    sortedSearch.keywords.splice(0, 1);
+    sortedSearch.ingredients.splice(0, 1);
+    console.log(sortedSearch);
+    const filteredRecipes = this.callBack(sortedSearch);
+    console.log(filteredRecipes);
     return false;
   }
 }

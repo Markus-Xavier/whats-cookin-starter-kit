@@ -7,7 +7,6 @@ export default class DataManager {
     this.ingredients = emptyArray;
     this.tags = emptyArray;
     this.filteredRecipes = emptyArray;
-    
   }
 
   setRecipes(recipes) {
@@ -39,7 +38,7 @@ export default class DataManager {
 
   checkForKeywordsInName(recipe, searchQuery) {
     const hasKeyword = searchQuery.keywords.map(keyword => {
-      return recipe.name.includes(keyword);
+      return recipe.name.toLowerCase().includes(keyword);
     })
     if (hasKeyword.indexOf(true) > -1) {
       return true;
@@ -62,7 +61,6 @@ export default class DataManager {
   }
 
   filterRecipes(sortedSearch) {
-    
     this.filteredRecipes = this.recipes.filter(recipe => {
       let isTagIncluded = false;
       let isKeywordIncluded = false;
@@ -83,6 +81,6 @@ export default class DataManager {
       return isTagIncluded || isKeywordIncluded || isIngredientIncluded;
   
     })
+    return this.filteredRecipes;
   }
-
-}    
+}

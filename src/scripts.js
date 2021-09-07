@@ -1,13 +1,12 @@
 import './styles.css';
-import apiCalls from './apiCalls';
+// import apiCalls from './apiCalls';
 import DataManager from './classes/DataManager';
 import recipeData from './data/recipes';
-import ingredientsData from './data/ingredients';
+import ingredientsData from './data/ingredients'
 import FormManager from './classes/FormManager';
 import FormHandler from './classes/FormHandler';
-import Ingredient from './classes/Ingredient';
-import Recipe from './classes/Recipe';
-import users from './data/users';
+import RecipeManager from './classes/RecipeManager';
+// import users from './data/users';
 
 // DOM elements
 
@@ -22,31 +21,24 @@ const searchBar = document.getElementById('searchBarInput');
 
 // Classes Instances
 
-const dataBase = new DataManager();
-const formHandler = new FormHandler();
-const formManager = new FormManager();
-dataBase.setRecipes(recipeData);
-dataBase.setIngredients(ingredientsData);
-dataBase.setTags();
+const dataManager = new DataManager();
+const recipeManager = new RecipeManager(dataManager.ingredients);
+const formHandler = new FormHandler(dataManager);
+const formManager = new FormManager('user-search', dataManager.filterRecipes.bind(dataManager), dataManager);
+dataManager.setRecipes(recipeData);
+dataManager.setIngredients(ingredientsData);
 
 // Event Listeners
 
 explore.addEventListener('click', displaySearch);
 favorites.addEventListener('click', showFavorites);
 wantToCook.addEventListener('click', showWantToCook);
-searchBar.addEventListener('keypress', filterData);
 popularRecipes.addEventListener('click', renderRecipe);
 wantToCookSection.addEventListener('click', renderRecipe);
 filteredRecipesSection.addEventListener('click', renderRecipe);
 recipeView.addEventListener('click', saveRecipe);
 
 //Event Handlers
-
-const filterData = (event) => {
-  if (event.key === 'Enter') {
-    // Do this
-  }
-}
 
 const displaySearch = (event) => {
   //Do something
