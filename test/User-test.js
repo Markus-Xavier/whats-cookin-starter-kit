@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 import User from '../src/classes/User';
-import users from '../src/data/usersData';
+import users from '../src/data/userDataTest';
 
 describe.only('User', function() {
   let user1, user2;
