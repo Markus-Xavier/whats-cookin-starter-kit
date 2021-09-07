@@ -72,9 +72,9 @@ a:link {
 .main-screen,
 .filtered-recipes-view,
 .recipe-view,
+.favorites-view,
 .want-to-cook-view,
 .actions,
-.heading-and-search-bar,
 .recipe-details,
 .ingredients-list,
 .instructions-list {
@@ -82,18 +82,6 @@ a:link {
 	flex-direction: column;
 	align-items: center;
 }
-
-/* .filtered-recipes-view {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-} */
-
-/* .heading-and-search-bar {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-} */
 
 .search-section {
 	width: 1080px;
@@ -123,6 +111,10 @@ a:link {
 	opacity: 75%;
 }
 
+#search-bar-filtered-view {
+	height: 24px;
+}
+
 .tagsSection {
 	margin-top: 15px;
 	width: 1053;
@@ -144,7 +136,6 @@ input[type=checkbox] {
 	background-color: #8fdb53;
 	border: none;
 }
-
 .pill-button {
 	width: 82px;
 	height: 28px;
