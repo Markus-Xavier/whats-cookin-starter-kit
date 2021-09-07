@@ -9,7 +9,6 @@ import RecipeManager from './classes/RecipeManager';
 // import users from './data/users';
 
 // DOM elements
-
 const explore = document.getElementById('exploreNav');
 const favorites = document.getElementById('favoritesNav');
 const wantToCook = document.getElementById('wantToCookNav');
@@ -20,16 +19,14 @@ const recipeView = document.getElementById('recipeView');
 const searchBar = document.getElementById('searchBarInput');
 
 // Classes Instances
-
 const dataManager = new DataManager();
-const recipeManager = new RecipeManager(dataManager.ingredients);
-const formHandler = new FormHandler(dataManager);
-const formManager = new FormManager('user-search', dataManager.filterRecipes.bind(dataManager), dataManager);
 dataManager.setRecipes(recipeData);
 dataManager.setIngredients(ingredientsData);
+const recipeManager = new RecipeManager(dataManager.ingredients);
+const formHandler = new FormHandler(dataManager);
+const formManager = new FormManager('user-search', dataManager.filterRecipes.bind(dataManager), dataManager, recipeManager);
 
 // Event Listeners
-
 explore.addEventListener('click', displaySearch);
 favorites.addEventListener('click', showFavorites);
 wantToCook.addEventListener('click', showWantToCook);
@@ -39,7 +36,6 @@ filteredRecipesSection.addEventListener('click', renderRecipe);
 recipeView.addEventListener('click', saveRecipe);
 
 //Event Handlers
-
 const displaySearch = (event) => {
   //Do something
 }
@@ -62,6 +58,5 @@ const saveRecipe = (event) => {
 
 
 // Helper functions
-
 const hide = (element) => element.classList.add('hidden');
 const show = (element) => element.classList.remove('hidden');
