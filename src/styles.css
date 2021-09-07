@@ -297,7 +297,7 @@ input[type=checkbox] {
 .filtered-results-section {
 	width: 1080px;
 	height: 100%;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 	display: flex;
 	flex-direction: column;
 }
