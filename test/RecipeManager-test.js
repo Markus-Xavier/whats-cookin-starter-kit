@@ -3,7 +3,7 @@ import { ingredientsDataBase, recipeDetails1, recipeDetails2 } from '../src/data
 import RecipeManager from '../src/classes/RecipeManager';
 import Recipe from '../src/classes/Recipe';
 
-describe('Recipe Manager', function() {
+describe.only('Recipe Manager', function() {
   let recipeManager;
   let filteredRecipes;
   let recipe1;
