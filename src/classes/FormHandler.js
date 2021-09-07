@@ -5,11 +5,11 @@ export default class FormHandler {
 
   getIngredientID (targetString) {
     const ingredientID = this.dataManager.ingredients.reduce((accumulator, ingredient) => {
-      if (ingredient.name.includes(targetString)) {
-        accumulator = ingredient.id;
+      if (!!ingredient.name && ingredient.name.toLowerCase().includes(targetString)) {
+        accumulator.push(ingredient.id); 
       }
       return accumulator;
-    }, 0)
+    }, [])
     return ingredientID;
   }
 

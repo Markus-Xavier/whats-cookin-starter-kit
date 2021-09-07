@@ -1,8 +1,10 @@
+import recipeData from "../data/recipes";
 import FormHandler from "./FormHandler";
 export default class FormManager {
-  constructor(formName, callBack, dataManager) {
+  constructor(formName, callBack, dataManager, recipeManager) {
     this.form = document.querySelector(`form[name="${formName}"]`);
     this.formHandler = new FormHandler(dataManager);
+    this.recipeManager = recipeManager;
     this.callBack = callBack;
     this.initialize();
   }
@@ -25,7 +27,10 @@ export default class FormManager {
     }
 
     const sortedSearch = this.formHandler.sortUserSearch(searchQuery.split(' '));
-    this.callBack(sortedSearch);
+    sortedSearch.keywords.splice(0, 1);
+    sortedSearch.ingredients.splice(0, 1);
+    const filteredRecipes = this.callBack(sortedSearch);
+    this.recipeManager.createRecipeInstances(filteredRecipes);
     return false;
   }
 }
