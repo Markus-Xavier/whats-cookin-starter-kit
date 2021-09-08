@@ -11,7 +11,7 @@ import { filteredResultsByTag } from '../src/data/DataManagerTestDatabase';
 import { filteredResultsByKeywords } from '../src/data/DataManagerTestDatabase';
 import { filteredResultsByTagsAndKeywords } from '../src/data/DataManagerTestDatabase';
 
-describe.only('DataManager', function() {
+describe('DataManager', function() {
   let dataManager;
   let user1;
   let user2;

@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-
 export default class Ingredient {
   constructor(ingredientDetails, ingredientsDataBase) {
     this.ingredientsDataBase = ingredientsDataBase;
