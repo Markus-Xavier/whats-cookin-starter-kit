@@ -239,14 +239,14 @@ const testRecipes = [
 const userInput = //return cookies & pork chops
 {
   tags: ["antipasti"],
-  keywords: ["pork"],
+  keywords: ["Pork"],
   ingredients: []
 };
 
 const userInput2 = //return pork chops
 {
   tags: [],
-  keywords: ["pork"],
+  keywords: ["Pork"],
   ingredients: []
 };
 

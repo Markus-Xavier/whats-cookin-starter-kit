@@ -21,7 +21,7 @@ export default class DataManager {
 
   setTags() {
     this.tags = this.recipes.map((element) => element.tags).flat();
-    this.tags = this.tags.reduce((accumulator, tag) => {
+    this.tags = this.tags.reduce((accumulatorgit, tag) => {
       !accumulator.includes(tag) && accumulator.push(tag);
       return accumulator;
     }, []);
