@@ -11,6 +11,10 @@ export default class Recipe {
     this.tags = recipeDetails.tags;
     this.recipeIngredients = recipeDetails.ingredients;
     this.processedIngredients = this.processIngredients();
+    this.totalCost = this.processedIngredients.reduce((acc, ingredient) => {
+      acc += ingredient.ingredientCost;
+      return acc;
+    }, 0)
   }
 
   processIngredients() {

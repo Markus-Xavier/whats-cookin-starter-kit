@@ -9,10 +9,6 @@ export default class RecipeManager {
     this.filteredRecipes = filteredRecipes;
   }
 
-  storeFilteredRecipes(filteredRecipes) {
-    this.filteredRecipes = filteredRecipes;
-  }
-
   createRecipeInstances() {
     this.filteredRecipes = this.filteredRecipes.map(recipeData => {
       return new Recipe(recipeData, this.ingredientDB);

@@ -5,7 +5,7 @@ export default class FormHandler {
 
   getIngredientID (targetString) {
     const ingredientID = this.dataManager.ingredients.reduce((accumulator, ingredient) => {
-      if (ingredient.name.includes(targetString)) {
+      if (ingredient.name && ingredient.name.includes(targetString)) {
         accumulator = ingredient.id;
       }
       return accumulator;

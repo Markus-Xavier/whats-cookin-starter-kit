@@ -37,8 +37,8 @@ describe('DataManager', function() {
   });
 
   it('should store recipes', function() {
-    dataManager.setRecipes(recipes);
-    assert.deepEqual(dataManager.recipes, recipes)
+    dataManager.setRecipes(testRecipes);
+    assert.deepEqual(dataManager.recipes, testRecipes)
   })
 
   it('should start off with no ingredients', function() {
@@ -55,19 +55,20 @@ describe('DataManager', function() {
   });
 
   it('should store tags from recipes', function() {
-    dataManager.setRecipes(recipes);
+    dataManager.setRecipes(testRecipes);
     assert.deepEqual(dataManager.tags, [
-      'antipasti', 'starter',
-      'snack', 'appetizer',
-      'antipasto', "hor d'oeuvre",
-      'lunch', 'main course',
-      'main dish', 'dinner',
-      'sauce', 'side dish',
-      'morning meal', 'brunch',
-      'breakfast', 'salad',
-      'condiment', 'dip',
-      'spread'
-    ]);
+      "antipasti",
+      "starter",
+      "snack",
+      "appetizer",
+      "antipasto",
+      "hor d'oeuvre",
+      "lunch",
+      "main course",
+      "main dish",
+      "dinner"
+    ]
+    );
   });
 
   it('should return a list of recipes filtered by tags and keywords', function () {
